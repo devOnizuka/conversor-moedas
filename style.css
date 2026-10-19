@@ -68,7 +68,35 @@ body {
 
 
 .moedas{
-    
+    display:flex;
+    gap:100px ;
+    justify-content: center;
+    font-size: 50px;
+    position: relative;
+    top:50px;
+
+    #inverter{
+        margin: 0 250px
+        
+    }
+    #moedaOrigem{
+        border-style: solid;
+    border-radius: 20px;
+    }
+    #moedaDestino{
+        border-style: solid;
+    border-radius: 20px;
+    }
+
+}
+
+
+.origem{
+
+}
+
+
+.destino{
 
 }
 
