@@ -1,5 +1,3 @@
-
-
 body {
     background-color: #fbfdfd;
     display: flex;
@@ -9,7 +7,6 @@ body {
     font-family: Arial, Helvetica, sans-serif;
     box-sizing: border-box;
 }
-
 
 .moldura {
     background-color: #97e1f3;
@@ -23,7 +20,6 @@ body {
     position: relative;
 }
 
-
 .titulo {
     text-align: center;
     font-size: 27px;
@@ -31,7 +27,6 @@ body {
     text-shadow: 1px 1px 2px #e6f0f0;
     margin: 10px 0 35px;
 }
-
 
 .insercaoValores {
     text-align: center;
@@ -68,7 +63,7 @@ body {
     margin: 30px auto;
 }
 
-.origem{
+.origem {
     display: flex;
     flex-direction: column;
     gap: 10px;
@@ -90,8 +85,7 @@ body {
     align-items: center;
     justify-content: center;
     position:absolute;
-    right: 900px;
-    
+    right: 900px; 
 }
 
 #inverter img {
@@ -106,8 +100,7 @@ body {
     filter: brightness(1.2);
 }
 
-
-#moedaOrigem{
+#moedaOrigem {
     border: 1px solid #4c71eb;
     border-radius: 20px;
     padding: 8px;
@@ -123,18 +116,15 @@ body {
     color: #4c71eb;
 }
 
-
 .botaoConverter {
     margin: 35px auto;
     position: absolute;
     left: 1280px;
     top: 285px;
     color: #4c71eb;
-    
-    }
-    
-    
-    #converter{
+}
+     
+    #converter {
         background-color:#4c71eb;
         border-radius:20px;
         border: 2px solid #4c71eb;
@@ -144,20 +134,24 @@ body {
         color:#ffffff;
         font-family: Arial, Helvetica, sans-serif;
         font-size: 17px;
-        
-    }
+}
 
-    #converter:hover{
+    #converter:hover {
     transform: scale(1.15);
     filter: brightness(1.2);
-    }
+}   
+
+.resultadoConversao {
+    display:flex;
+    justify-content: center;
+    
 
     
 }
 
-.resultadoConversao {
-}
+.cotacao{
 
+}
 
 @media (max-width: 600px) {
     .moldura {
