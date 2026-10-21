@@ -21,8 +21,9 @@ body {
 }
 
 .titulo {
+    font-family: Arial, Helvetica, sans-serif;
     text-align: center;
-    font-size: 27px;
+    font-size: 30px;
     color: #4c71eb;
     text-shadow: 1px 1px 2px #e6f0f0;
     margin: 10px 0 35px;
@@ -84,8 +85,8 @@ body {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    position:absolute;
-    right: 900px; 
+    position: absolute;
+    left:970px;
 }
 
 #inverter img {
@@ -119,7 +120,7 @@ body {
 .botaoConverter {
     margin: 35px auto;
     position: absolute;
-    left: 1280px;
+    left: 1350px;
     top: 285px;
     color: #4c71eb;
 }
@@ -134,24 +135,70 @@ body {
         color:#ffffff;
         font-family: Arial, Helvetica, sans-serif;
         font-size: 17px;
-}
+    }
 
-    #converter:hover {
-    transform: scale(1.15);
-    filter: brightness(1.2);
-}   
+        #converter:hover {
+        transform: scale(1.15);
+        filter: brightness(1.2);
+    }   
 
-.resultadoConversao {
-    display:flex;
+    .tituloResultado { 
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+    font-size: 30px;
+    color: #4c71eb;
+    text-shadow: 1px 1px 2px #e6f0f0;
+    transform: translateY(80px);
+    }
+
+    .resultadoConversao {
+    display: flex;
     justify-content: center;
-    
+    align-items: center;
+    gap: 150px;
+    font-size: 25px;
+    color: #4c71eb;
+    transform: translateY(60px);
+    }
 
-    
-}
+    .original{
+        display: flex;
+    flex-direction: column;
+    gap: 30px;
+    }
 
-.cotacao{
+    .sinalIgual img {
+        align-self: center;
+        width: 150px;
+        height: 150px;
+        transform: translateY(40px);
+    }
 
-}
+    .convertido{
+        display: flex;
+    flex-direction: column;
+    gap: 30px;
+    }
+
+    .cotacao{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 30px;
+    color: #4c71eb;
+    text-shadow: 1px 1px 2px #e6f0f0;
+    transform: translateY(80px);
+    font-weight: bold;
+    width: 100%;
+    }
+
+    .cotacao p {
+        display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    }
 
 @media (max-width: 600px) {
     .moldura {
