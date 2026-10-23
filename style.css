@@ -1,5 +1,5 @@
 body {
-    background-color: #fbfdfd;
+    background-color: #0d233a;
     display: flex;
     justify-content: center;
     min-height: 100vh;
@@ -9,13 +9,13 @@ body {
 }
 
 .moldura {
-    background-color: #97e1f3;
-    border: 5px solid #4c71eb;
-    border-radius: 5px;
-    width: 95%;
+    background-color: #B8CBE3 ;
+    border: 5px solid #051136;
+    border-radius: 15px;
+    width: 98%;
     min-height: 90vh;
-    margin: 20px auto;
-    padding: 20px;
+    margin: 22px auto;
+    padding: 40px;
     box-sizing: border-box;
     position: relative;
 }
@@ -24,7 +24,7 @@ body {
     font-family: Arial, Helvetica, sans-serif;
     text-align: center;
     font-size: 30px;
-    color: #4c71eb;
+    color: #173B63;
     text-shadow: 1px 1px 2px #e6f0f0;
     margin: 10px 0 35px;
 }
@@ -38,7 +38,7 @@ body {
     display: block;
     font-size: 30px;
     font-weight: bold;
-    color: #4c71eb;
+    color: #173B63;
     margin-bottom: 10px;
 }
 
@@ -55,25 +55,34 @@ body {
 
 
 .moedas {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
+    align-items: end;
+    width: 100%;
+    margin: 50px auto;
+}
+
+.conjuntoMoedas{
+    grid-column: 2;
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 70px;
     font-size: 30px;
-    color: #4c71eb;
-    margin: 30px auto;
+    color: #173B63;
 }
-
 .origem {
     display: flex;
     flex-direction: column;
     gap: 10px;
+    text-align: center;
 }
 
 .destino {
     display: flex;
     flex-direction: column;
     gap: 10px;
+    text-align: center;
 }
 
 #inverter {
@@ -85,8 +94,7 @@ body {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    position: absolute;
-    left:970px;
+    transform: translate(0px, 25px);
 }
 
 #inverter img {
@@ -102,36 +110,41 @@ body {
 }
 
 #moedaOrigem {
+    height: 35px;
+    width: clamp(180px, 22vw, 300px);
     border: 1px solid #4c71eb;
-    border-radius: 20px;
+    border-radius: 10px;
     padding: 8px;
     background-color: #ffffff;
     color: #4c71eb;
 }
 
 #moedaDestino {
+    height: 35px;
+    width: clamp(180px, 22vw, 300px);
     border: 1px solid #4c71eb;
-    border-radius: 20px;
+    border-radius: 10px;
     padding: 8px;
     background-color: #ffffff;
     color: #4c71eb;
 }
 
 .botaoConverter {
-    margin: 35px auto;
-    position: absolute;
-    left: 1350px;
-    top: 285px;
+    grid-column: 3;
+    justify-self: stretch;
     color: #4c71eb;
+    margin-left: 50px;
 }
-     
+
     #converter {
-        background-color:#4c71eb;
-        border-radius:20px;
-        border: 2px solid #4c71eb;
+        background-color:#173B63;
+        border-radius:10px;
+        border: 2px solid #173B63;
         display: block;
-        width:200px;
-        height: 45px;
+        min-width: 120px;
+        width:100%;
+        max-width:300px;
+        height: 35px;
         color:#ffffff;
         font-family: Arial, Helvetica, sans-serif;
         font-size: 17px;
@@ -140,70 +153,74 @@ body {
         #converter:hover {
         transform: scale(1.15);
         filter: brightness(1.2);
-    }   
+    }
 
-    .tituloResultado { 
+    .tituloResultado {
     font-family: Arial, Helvetica, sans-serif;
     text-align: center;
-    font-size: 30px;
-    color: #4c71eb;
+    font-size: 25px;
+    color: #173B63;
     text-shadow: 1px 1px 2px #e6f0f0;
-    transform: translateY(80px);
+    transform: translateY(30px);
     }
 
     .resultadoConversao {
     display: flex;
+    flex-direction: row;
     justify-content: center;
-    align-items: center;
-    gap: 150px;
+    text-align: center;
+    gap: 80px;
     font-size: 25px;
-    color: #4c71eb;
-    transform: translateY(60px);
+    color: #173B63;
     }
 
     .original{
-        display: flex;
+    display: flex;
     flex-direction: column;
-    gap: 30px;
+    transform: translate(0, 15px);
     }
 
-    .sinalIgual img {
+    .sinalIgual{
         align-self: center;
-        width: 150px;
-        height: 150px;
-        transform: translateY(35px);
+        transform: translateY(50px);
+        font-size: 100px;
+        color:#173B63;
     }
 
     .convertido{
         display: flex;
-    flex-direction: column;
-    gap: 30px;
-    }
-    
-    #exibirConvertido{
-        align-self: center; 
-        box-sizing: border-box;
-        background-color:#f9fafc;
-        border-radius:20px;
-        border: 2px solid #4c71eb;
-        width:200px;
-        height: 45px;
-        color:#ffffff;
-        margin:0;
-        transform: translate(0px, -40px);
+        flex-direction: column;
+        transform: translate(0, 15px);
     }
 
     #exibirOriginal{
-        align-self: center; 
+        align-self: center;
         box-sizing: border-box;
         background-color:#f9fafc;
-        border-radius:20px;
+        border-radius:10px;
         border: 2px solid #4c71eb;
-        width:200px;
-        height: 45px;
-        color:#ffffff;
-        margin:0;
-        transform: translate(0px, -40px);
+        width: clamp(180px, 22vw, 300px);
+        height: 35px;
+        color:#173B63;
+        margin:-18px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    #exibirConvertido{
+        align-self: center;
+        box-sizing: border-box;
+        background-color:#f9fafc;
+        border-radius:10px;
+        border: 2px solid #4c71eb;
+        width: clamp(180px, 22vw, 300px);
+        height: 35px;
+        color:#173B63;
+        margin:-18px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
 
     .cotacao{
@@ -212,9 +229,9 @@ body {
     align-items: center;
     font-family: Arial, Helvetica, sans-serif;
     font-size: 30px;
-    color: #4c71eb;
+    color: #173B63;
     text-shadow: 1px 1px 2px #e6f0f0;
-    transform: translateY(80px);
+    transform: translateY(50px);
     font-weight: bold;
     width: 100%;
     }
@@ -226,20 +243,128 @@ body {
     gap: 8px;
     }
 
+    @media (max-width: 1000px) {
+.moldura {
+padding: 25px;
+}
 
+   .titulo{
+        font-size: 26px;
+    }
+    .insercaoValores label {
+  font-size: 24px;
+    }
 
+    .insercaoValores input {
+      width: 60%;
+    }
 
+    .moedas {
+    grid-template-columns: 1fr;
+        justify-items: center;
+        gap: 15px;
+        margin: 30px auto;
+    }
 
+    .conjuntoMoedas {
+ grid-column: 1;
+        flex-direction: column;
+        align-items: center;
+        gap: 12px;
+        width: 100%;
+        font-size: 22px;
+    }
 
+    .origem,
+   .destino {
+        align-items: center;
+        width: 100%;
+        max-width: 280px;
+        margin: 0 auto;
+    }
 
+    #moedaOrigem,
+    #moedaDestino {
+    width: 100%;
+        max-width: 280px;
+    }
 
+    #inverter {
+        transform: none;
+    }
+      #inverter img {
+        width: 34px;
+        height: 34px;
+        transform: rotate(90deg);
+    }
 
+    #inverter:hover img {
+        transform: rotate(90deg) scale(1.15);
+    }
 
+    .botaoConverter {
+        grid-column: 1;
+        justify-self: center;
+        width: 280px;
+        margin: 10px auto 0;
+    }
 
+ #converter {
+        width: 100%;
+        max-width: 280px;
+        height: 35px;
+        font-size: 16px;
+        margin: 0 auto;
+    }
 
+    .tituloResultado {
+        font-size: 22px;
+        transform: none;
+    }
+
+    .resultadoConversao {
+    flex-direction: column;
+        align-items: center;
+        width: 100%;
+        gap: 15px;
+        font-size: 20px;
+    }
+
+    .original,
+    .convertido {
+        align-items: center;
+        transform: none;
+        width: 100%;
+    }
+
+    .sinalIgual {
+        transform: none;
+        font-size: 60px;
+    }
+
+    #exibirOriginal,
+    #exibirConvertido {
+        width: 100%;
+        max-width: 280px;
+        margin: 0 auto;
+    }
+
+ .cotacao {
+        font-size: 20px;
+        transform: none;
+        text-align: center;
+        margin: 30px auto 10px;
+        width: 100%;
+    }
+
+    .cotacao p {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+}
 
 @media (max-width: 600px) {
-    .moldura {
+  .moldura {
         width: 95%;
         min-height: 90vh;
         margin: 10px auto;
@@ -247,25 +372,143 @@ body {
         border-radius: 15px;
     }
 
-    .titulo {
-        font-size: 23px;
+.titulo {
+        font-size: 22px;
+        margin: 10px 0 20px;
+    }
+
+    .insercaoValores {
+        margin: 10px 0 25px;
     }
 
     .insercaoValores label {
-        font-size: 24px;
+    font-size: 18px;
     }
 
     .insercaoValores input {
         width: 90%;
+        max-width: none;
+        height: 35px;
     }
 
     .moedas {
-        gap: 12px;
-        font-size: 22px;
+        grid-template-columns: 1fr;
+        justify-items: center;
+        gap: 10px;
+        margin: 20px auto;
+        width: 100%;
     }
 
-    #inverter img {
+    .conjuntoMoedas {
+        grid-column: 1;
+        flex-direction: column;
+        align-items: center;
+        gap: 12px;
+        width: 100%;
+        font-size: 16px;
+    }
+
+    .origem,
+    .destino {
+        align-items: center;
+        width: 100%;
+        max-width: 240px;
+        margin: 0 auto;
+    }
+
+    .origem label,
+    .destino label {
+        font-size: 16px;
+    }
+
+    #moedaOrigem,
+    #moedaDestino {
+        width: 100%;
+        max-width: 240px;
+        font-size: 14px;
+    }
+
+    .botaoInverter {
+        display: flex;
+        justify-content: center;
+    }
+
+    #inverter {
+        transform: none;
+    }
+
+ #inverter img {
         width: 30px;
         height: 30px;
+        transform: rotate(90deg);
+    }
+
+    #inverter:hover img {
+        transform: rotate(90deg) scale(1.15);
+    }
+
+    .botaoConverter {
+        grid-column: 1;
+        justify-self: center;
+        width: 240px;
+        margin: 10px auto 0;
+    }
+
+    #converter {
+        width: 100%;
+        max-width: 240px;
+        height: 35px;
+        font-size: 15px;
+        margin: 0 auto;
+    }
+
+    .tituloResultado {
+        font-size: 20px;
+        transform: none;
+    }
+
+    .resultadoConversao {
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        gap: 10px;
+        font-size: 16px;
+    }
+
+    .original,
+    .convertido {
+        align-items: center;
+        transform: none;
+        width: 100%;
+    }
+
+    .original h3,
+    .convertido h3 {
+        font-size: 16px;
+    }
+
+    .sinalIgual {
+        transform: none;
+        font-size: 50px;
+    }
+
+    #exibirOriginal,
+    #exibirConvertido {
+        width: 100%;
+        max-width: 240px;
+        margin: 0 auto;
+    }
+
+    .cotacao {
+        font-size: 16px;
+        transform: none;
+        text-align: center;
+        margin: 25px auto 10px;
+        width: 100%;
+    }
+
+    .cotacao p {
+        flex-wrap: wrap;
+        justify-content: center;
     }
 }
