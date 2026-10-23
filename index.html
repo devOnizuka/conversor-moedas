@@ -6,84 +6,67 @@
     <title>Conversor de Moedas</title>
     <link rel="stylesheet" href="style.css">
     <script src="script.js" defer></script>
-
 </head>
 <body>
     <div class="moldura">
+        <div class="titulo">
+            <h1>Conversor de Moedas</h1>
+        </div>
 
+        <div class="insercaoValores">
+            <div>
+                <label for="valor">Valor:</label>
+                <input type="number" step="0.01" id="valor" placeholder="0,00">
+            </div>
+        </div>
 
+        <div class="moedas">
+            <div class="conjuntoMoedas">
+                <div class="origem">
+                    <label for="moedaOrigem">Converter de:</label>
+                    <select id="moedaOrigem"></select>
+                </div>
 
-    <div class="titulo">
-    <h1>Conversor de Moedas</h1>
+                <div class="botaoInverter">
+                    <button id="inverter"><img src="Imagens/sinal de inverter.png" alt="Inverter Moedas"></button>
+                </div>
+
+                <div class="destino">
+                    <label for="moedaDestino">Converter para:</label>
+                    <select id="moedaDestino"></select>
+                </div>
+            </div>
+
+            <div class="botaoConverter">
+                <button id="converter">Converter</button>
+            </div>
+        </div>
+
+        <div class="tituloResultado">
+            <h2>Resultado:</h2>
+        </div>
+
+        <div class="resultadoConversao">
+            <div class="original">
+                <h3 id="valorOriginal">Valor original</h3>
+                <output id="exibirOriginal"></output>
+            </div>
+
+            <div class="sinalIgual">=</div>
+
+            <div class="convertido">
+                <h3 id="valorConvertido">Valor convertido</h3>
+                <output id="exibirConvertido"></output>
+            </div>
+        </div>
+
+        <div class="cotacao">
+            <p>
+                <span>Cotação Atual:</span>
+                <span id="valorCotacao"></span>
+            </p>
+            <small id="dataCotacao"></small>
+        </div>
     </div>
-
-
-
-<div class="insercaoValores">
-   <form>
-        <label for="valor">Valor:</label>
-        <input type="number" step="0.01" id="valor" placeholder="0,00">
-    </form>
-</div>
-    
-
-    
-<div class="moedas">
-    <div class="origem">
-        <label for="moedaOrigem">Converter de:</label>
-        <select id="moedaOrigem"></select>
-    </div>
-
-    <div class="botaoInverter">
-        <button id="inverter"><img src="Imagens/sinal de inverter.png" alt="Inverter Moedas"></button>
-    </div>
-
-    <div class="destino">
-        <label for="moedaDestino">Converter para:</label>
-        <select id="moedaDestino"></select>
-    </div>  
-
-</div>
-
-
-
-<div class="botaoConverter">
-        <button id="converter">Converter</button>
-</div>
-
-<div class="tituloResultado">
-    <h2>Resultado:</h2>
-</div>
-
-<div class="resultadoConversao">
-        
-    <div class="original">
-        <h3 id="valorOriginal">Valor original</h3>
-        <p id="exibirOriginal"></p>
-    </div>
-
-    <div class="sinalIgual"><img src="Imagens/sinal de igual.png" alt=""></div>
-
-    <div class="convertido">
-        <h3 id="valorConvertido">Valor convertido</h3>
-        <p id="exibirConvertido"></p>
-    </div>
-
-</div> 
-
-
-
-<div class="cotacao">
-        <p>
-            <span>Cotação Atual:</span>
-            <span id="valorCotacao"></span>
-        </p>
-        <small id="dataCotacao"></small>
-</div>
-    
-
-
-
-</div>
 </body>
 </html>
