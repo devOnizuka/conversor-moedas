@@ -116,7 +116,9 @@ body {
     border-radius: 10px;
     padding: 8px;
     background-color: #ffffff;
-    color: #4c71eb;
+    color: #173B63;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
 }
 
 #moedaDestino {
@@ -126,7 +128,9 @@ body {
     border-radius: 10px;
     padding: 8px;
     background-color: #ffffff;
-    color: #4c71eb;
+    color: #173B63;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
 }
 
 .botaoConverter {
