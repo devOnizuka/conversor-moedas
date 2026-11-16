@@ -13,7 +13,7 @@ valor.addEventListener("input", function(){
     }
 });
 
-botaoConverter.addEventListener("click", function(){
+botaoConverter.addEventListener("click", function(){    
 const valorDigitado = Number(valor.value.replace(",","."));
 const origemEscolhida = moedaOrigem.value;
 const destinoEscolhido = moedaDestino.value;
@@ -28,8 +28,8 @@ const url = `https://api.frankfurter.dev/v2/rate/${origemEscolhida}/${destinoEsc
     }).then(function(dados){
         const cotacao = dados.rate;
         const resultadoConvertido = valorDigitado * cotacao;
-        exibirValorOriginal.textContent = valorDigitado;
-        exibirValor.textContent = resultadoConvertido;
+        exibirValorOriginal.textContent = valorDigitado + " " + origemEscolhida;
+        exibirValor.textContent = resultadoConvertido + " " + destinoEscolhido;
     })
 
     
