@@ -1,5 +1,5 @@
 const exibirValor = document.getElementById("exibirConvertido");
-
+const exibirValorOriginal = document.getElementById("exibirOriginal");
 const valor = document.getElementById("valor");
 const botaoConverter = document.getElementById("converter");
 const moedaOrigem = document.getElementById("moedaOrigem");
@@ -28,6 +28,7 @@ const url = `https://api.frankfurter.dev/v2/rate/${origemEscolhida}/${destinoEsc
     }).then(function(dados){
         const cotacao = dados.rate;
         const resultadoConvertido = valorDigitado * cotacao;
+        exibirValorOriginal.textContent = valorDigitado;
         exibirValor.textContent = resultadoConvertido;
     })
 
