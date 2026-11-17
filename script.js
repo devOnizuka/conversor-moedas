@@ -28,8 +28,21 @@ const url = `https://api.frankfurter.dev/v2/rate/${origemEscolhida}/${destinoEsc
     }).then(function(dados){
         const cotacao = dados.rate;
         const resultadoConvertido = valorDigitado * cotacao;
-        exibirValorOriginal.textContent = valorDigitado + " " + origemEscolhida;
-        exibirValor.textContent = resultadoConvertido + " " + destinoEscolhido;
+        exibirValorOriginal.textContent = valorDigitado.toFixed(2) + " " + origemEscolhida;
+        exibirValor.textContent = resultadoConvertido.toFixed(2) + " " + destinoEscolhido;
+        exibirValorOriginal.style.fontSize = "";
+        exibirValor.style.fontSize = "";    
+        let tamanhoFonte = parseFloat(getComputedStyle(exibirValor).fontSize);
+        let tamanhoFonteOriginal = parseFloat(getComputedStyle(exibirValorOriginal).fontSize);
+        while (exibirValor.scrollWidth > exibirValor.clientWidth && tamanhoFonte > 10) {
+        tamanhoFonte--;
+        exibirValor.style.fontSize = tamanhoFonte + "px";
+        while (exibirValorOriginal.scrollWidth > exibirValorOriginal.clientWidth && tamanhoFonteOriginal > 10) {
+        tamanhoFonteOriginal--;
+        exibirValorOriginal.style.fontSize = tamanhoFonteOriginal + "px";
+}
+}
+
     })
 
     
