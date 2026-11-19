@@ -5,6 +5,8 @@ const botaoConverter = document.getElementById("converter");
 const moedaOrigem = document.getElementById("moedaOrigem");
 const moedaDestino = document.getElementById("moedaDestino");
 const botaoInverter = document.getElementById("inverter");
+const exibirCotacao = document.getElementById("valorCotacao");
+const exibirData = document.getElementById("dataCotacao");
     let ultimoValorValido = "";
 valor.addEventListener("input", function(){
     if (/^\d*[.,]?\d{0,2}$/.test(valor.value)) {
@@ -28,10 +30,14 @@ const url = `https://api.frankfurter.dev/v2/rate/${origemEscolhida}/${destinoEsc
         return resposta.json();
     }).then(function(dados){
         const cotacao = dados.rate;
+        const dataSeparada = dados.date.split("-");
+        const dataFormatada = dataSeparada[2] + "/" + dataSeparada[1] + "/" + dataSeparada[0];
+        exibirCotacao.textContent =  "1 "  + origemEscolhida +  "  =  " + cotacao.toFixed(2).replace(".", ",")  + " " + destinoEscolhido;
+        exibirData.textContent = "Data da cotação: " + dataFormatada;
         const resultadoConvertido = valorDigitado * cotacao;
         exibirValorOriginal.textContent = valorDigitado.toFixed(2).replace(".",",") + " " + origemEscolhida;
         exibirValor.textContent = resultadoConvertido.toFixed(2).replace(".",",") + " " + destinoEscolhido;
-        valor.value = (0).toFixed(2).replace(".",",");
+        valor.value = "";
         exibirValorOriginal.style.fontSize = "";
         exibirValor.style.fontSize = "";    
         let tamanhoFonte = parseFloat(getComputedStyle(exibirValor).fontSize);
