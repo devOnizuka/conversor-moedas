@@ -4,6 +4,7 @@ const valor = document.getElementById("valor");
 const botaoConverter = document.getElementById("converter");
 const moedaOrigem = document.getElementById("moedaOrigem");
 const moedaDestino = document.getElementById("moedaDestino");
+const botaoInverter = document.getElementById("inverter");
     let ultimoValorValido = "";
 valor.addEventListener("input", function(){
     if (/^\d*[.,]?\d{0,2}$/.test(valor.value)) {
@@ -28,8 +29,9 @@ const url = `https://api.frankfurter.dev/v2/rate/${origemEscolhida}/${destinoEsc
     }).then(function(dados){
         const cotacao = dados.rate;
         const resultadoConvertido = valorDigitado * cotacao;
-        exibirValorOriginal.textContent = valorDigitado.toFixed(2) + " " + origemEscolhida;
-        exibirValor.textContent = resultadoConvertido.toFixed(2) + " " + destinoEscolhido;
+        exibirValorOriginal.textContent = valorDigitado.toFixed(2).replace(".",",") + " " + origemEscolhida;
+        exibirValor.textContent = resultadoConvertido.toFixed(2).replace(".",",") + " " + destinoEscolhido;
+        valor.value = (0).toFixed(2).replace(".",",");
         exibirValorOriginal.style.fontSize = "";
         exibirValor.style.fontSize = "";    
         let tamanhoFonte = parseFloat(getComputedStyle(exibirValor).fontSize);
@@ -37,11 +39,13 @@ const url = `https://api.frankfurter.dev/v2/rate/${origemEscolhida}/${destinoEsc
         while (exibirValor.scrollWidth > exibirValor.clientWidth && tamanhoFonte > 10) {
         tamanhoFonte--;
         exibirValor.style.fontSize = tamanhoFonte + "px";
+}
+        
         while (exibirValorOriginal.scrollWidth > exibirValorOriginal.clientWidth && tamanhoFonteOriginal > 10) {
         tamanhoFonteOriginal--;
         exibirValorOriginal.style.fontSize = tamanhoFonteOriginal + "px";
 }
-}
+
 
     })
 
@@ -61,3 +65,13 @@ fetch("https://api.frankfurter.dev/v2/currencies").then(function(resposta) {
        moedaOrigem.appendChild(optionOrigem);
        moedaDestino.appendChild(optionDestino)});
 })
+
+botaoInverter.addEventListener("click", function(){
+    const moedaTemporaria = moedaOrigem.value;
+    moedaOrigem.value = moedaDestino.value;
+    moedaDestino.value = moedaTemporaria;
+    
+    const exibirValorTemporario = exibirValor.textContent;
+    exibirValor.textContent = exibirValorOriginal.textContent;
+    exibirValorOriginal.textContent = exibirValorTemporario;
+});
