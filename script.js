@@ -5,6 +5,7 @@ const botaoConverter = document.getElementById("converter");
 const moedaOrigem = document.getElementById("moedaOrigem");
 const moedaDestino = document.getElementById("moedaDestino");
 const botaoInverter = document.getElementById("inverter");
+const mensagemErro = document.getElementById("mensagemErro");
 const exibirCotacao = document.getElementById("valorCotacao");
 const exibirData = document.getElementById("dataCotacao");
     let ultimoValorValido = "";
@@ -72,7 +73,12 @@ const url = `https://api.frankfurter.dev/v2/rate/${origemEscolhida}/${destinoEsc
     
 });
 fetch("https://api.frankfurter.dev/v2/currencies").then(function(resposta) {
-    return resposta.json();})
+     if(resposta.ok){
+        return resposta.json();
+        } else{
+            throw new Error("Não foi possível carregar a lista de moedas.");
+        }
+    })
     .then(function(dados){
     dados.forEach(function(moeda){
        const optionOrigem = document.createElement("option");
@@ -84,17 +90,20 @@ fetch("https://api.frankfurter.dev/v2/currencies").then(function(resposta) {
        moedaOrigem.appendChild(optionOrigem);
        moedaDestino.appendChild(optionDestino)});
 })
+.catch(function(erro){
+        document.getElementById("mensagemErro").textContent = "Não foi possível carregar a lista de moedas.";
+    });
 
 botaoInverter.addEventListener("click", function(){
     const moedaTemporaria = moedaOrigem.value;
     moedaOrigem.value = moedaDestino.value;
     moedaDestino.value = moedaTemporaria;
-    
     const exibirValorTemporario = exibirValor.textContent;
     exibirValor.textContent = exibirValorOriginal.textContent;
     exibirValorOriginal.textContent = exibirValorTemporario;
     const origemEscolhida = moedaOrigem.value;
     const destinoEscolhido = moedaDestino.value;
+
     const urlInvertida = `https://api.frankfurter.dev/v2/rate/${origemEscolhida}/${destinoEscolhido}`;
     fetch(urlInvertida)
     .then(function(resposta){

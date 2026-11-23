@@ -520,3 +520,10 @@ padding: 25px;
 #exibirConvertido {
     white-space: nowrap;
 }
+
+#mensagemErro {
+    text-align: center;
+    color: #173B63;
+    font-size: 14px;
+    margin: 0;
+}
