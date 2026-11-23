@@ -47,6 +47,7 @@ const url = `https://api.frankfurter.dev/v2/rate/${origemEscolhida}/${destinoEsc
         exibirValorOriginal.textContent = valorDigitado.toFixed(2).replace(".",",") + " " + origemEscolhida;
         exibirValor.textContent = resultadoConvertido.toFixed(2).replace(".",",") + " " + destinoEscolhido;
         valor.value = "";
+        ultimoValorValido = "";
         exibirValorOriginal.style.fontSize = "";
         exibirValor.style.fontSize = "";    
         let tamanhoFonte = parseFloat(getComputedStyle(exibirValor).fontSize);
