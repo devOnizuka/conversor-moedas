@@ -9,7 +9,11 @@ const exibirCotacao = document.getElementById("valorCotacao");
 const exibirData = document.getElementById("dataCotacao");
     let ultimoValorValido = "";
 valor.addEventListener("input", function(){
-    if (/^\d*[.,]?\d{0,2}$/.test(valor.value)) {
+    if (valor.value === "") {
+        ultimoValorValido = "";
+        return;
+    }
+    if (/^\d+[.,]?\d{0,2}$/.test(valor.value)) {
         ultimoValorValido = valor.value;
     } else{
         valor.value = ultimoValorValido;
@@ -27,7 +31,11 @@ const url = `https://api.frankfurter.dev/v2/rate/${origemEscolhida}/${destinoEsc
 
     fetch(url)
     .then(function(resposta){
+        if(resposta.ok){
         return resposta.json();
+        } else{
+            throw new Error("Site Indisponível");
+        }
     }).then(function(dados){
         const cotacao = dados.rate;
         const dataSeparada = dados.date.split("-");
@@ -45,7 +53,7 @@ const url = `https://api.frankfurter.dev/v2/rate/${origemEscolhida}/${destinoEsc
         while (exibirValor.scrollWidth > exibirValor.clientWidth && tamanhoFonte > 10) {
         tamanhoFonte--;
         exibirValor.style.fontSize = tamanhoFonte + "px";
-}
+    }
         
         while (exibirValorOriginal.scrollWidth > exibirValorOriginal.clientWidth && tamanhoFonteOriginal > 10) {
         tamanhoFonteOriginal--;
@@ -55,7 +63,12 @@ const url = `https://api.frankfurter.dev/v2/rate/${origemEscolhida}/${destinoEsc
 
     })
 
-    
+.catch(function(erro){
+    exibirValorOriginal.textContent = "";
+    exibirValor.textContent = "";
+    exibirData.textContent = "";
+    exibirCotacao.textContent = "Não foi possível realizar a conversão."
+});
     
 });
 fetch("https://api.frankfurter.dev/v2/currencies").then(function(resposta) {
