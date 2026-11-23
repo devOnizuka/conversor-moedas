@@ -93,4 +93,28 @@ botaoInverter.addEventListener("click", function(){
     const exibirValorTemporario = exibirValor.textContent;
     exibirValor.textContent = exibirValorOriginal.textContent;
     exibirValorOriginal.textContent = exibirValorTemporario;
+    const origemEscolhida = moedaOrigem.value;
+    const destinoEscolhido = moedaDestino.value;
+    const urlInvertida = `https://api.frankfurter.dev/v2/rate/${origemEscolhida}/${destinoEscolhido}`;
+    fetch(urlInvertida)
+    .then(function(resposta){
+        if(resposta.ok){
+        return resposta.json();
+        } else{
+            throw new Error("Site Indisponível");
+        }
+    })
+    .then(function(dados){
+        const cotacaoInvertida = dados.rate;
+        exibirCotacao.textContent = " 1 " + origemEscolhida + " = " + cotacaoInvertida.toFixed(2).replace(".", ",") + " " + destinoEscolhido;
+        const dataSeparada = dados.date.split("-");
+        const dataFormatada = dataSeparada[2] + "/" + dataSeparada[1] + "/" + dataSeparada[0];
+         exibirData.textContent = "Data da cotação: " + dataFormatada;
+    })
+    .catch(function(erro){
+        
+        exibirData.textContent = "";
+        exibirCotacao.textContent = "Não foi possível atualizar a conversão."
+    });
 });
+
