@@ -17,3 +17,9 @@ Aplicação web desenvolvida com HTML, CSS e JavaScript, que permite converter v
 - Exibição da cotação utilizada na conversão.
 
 - Exibição da data da cotação.
+
+## Tecnologias utilizadas
+
+- HTML5
+- CSS3
+- JavaScript
