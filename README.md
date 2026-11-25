@@ -23,3 +23,7 @@ Aplicação web desenvolvida com HTML, CSS e JavaScript, que permite converter v
 - HTML5
 - CSS3
 - JavaScript
+
+## API utilizada
+
+- [Frankfurter API](https://www.frankfurter.dev/)
