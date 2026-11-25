@@ -27,3 +27,12 @@ Aplicação web desenvolvida com HTML, CSS e JavaScript, que permite converter v
 ## API utilizada
 
 - [Frankfurter API](https://www.frankfurter.dev/)
+
+## Como executar o projeto
+
+1. Clone este repositório:
+   `git clone https://github.com/devOnizuka/conversor-moedas.git`
+
+2. Abra a pasta do projeto no VS Code.
+
+3. Abra o arquivo `index.html` no navegador.
