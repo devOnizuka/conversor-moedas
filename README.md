@@ -37,6 +37,9 @@ Aplicação web desenvolvida com HTML, CSS e JavaScript, que permite converter v
 
 3. Abra o arquivo `index.html` no navegador.
 
+4. Ou acesse a aplicação diretamente pelo navegador:
+[Conversor de Moedas](https://devonizuka.github.io/conversor-moedas/)
+
 ## Demonstração
 
 ![Demonstração do Conversor de Moedas](Imagens/demonstracao.png)
