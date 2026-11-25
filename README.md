@@ -36,3 +36,7 @@ Aplicação web desenvolvida com HTML, CSS e JavaScript, que permite converter v
 2. Abra a pasta do projeto no VS Code.
 
 3. Abra o arquivo `index.html` no navegador.
+
+## Demonstração
+
+![Demonstração do Conversor de Moedas](Imagens/demonstracao.png)
